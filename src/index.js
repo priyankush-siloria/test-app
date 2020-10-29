@@ -59,7 +59,7 @@ function App() {
                                     borderTopRightRadius: 30,
                                     height: Dimensions.get('window').height/10
                                 },
-                                labelStyle: {fontSize: 10},
+                                labelStyle: {fontSize: 10,fontFamily:'OpenSans-Regular'},
                                 tabStyle:{paddingBottom: 10,paddingTop: 20,backgroundColor:'transparent'}
                             }}>
                 <Tab.Screen name="Home" component={HomeScreen}

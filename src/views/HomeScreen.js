@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import {styles} from './styles';
-
+import { BorderShadow } from 'react-native-shadow'
 import axe from '../assets/icons/axe.png';
 import tap from '../assets/icons/tap.png'
 import sewing from '../assets/icons/sewing.png'
@@ -33,7 +33,13 @@ const options = [
     {icon: massage, text: "Massage"},
     {icon: massage, text: "Massage"},
     {icon: Pest, text: "Pest Control"},
-]
+];
+const shadowOpt = {
+    color:"rgba(0, 0, 0, 0.05)",
+    border:2,
+    inset: true,
+    style:{marginVertical:5}
+};
 
 export default class HomeScreen extends React.Component{
     constructor(props){
@@ -52,12 +58,12 @@ export default class HomeScreen extends React.Component{
                                 <Text style={styles.name}>Saepul Rohman</Text>
                             </View>
                             <View style={styles.topIcons}>
-                                <View style={styles.imgShadow} elevation={3}>
+                                <View style={styles.imgShadow} elevation={10}>
                                     <TouchableOpacity onPress={()=>{}}>
                                         <Image source={require('../assets/icons/notif.png')} style={styles.topIcon} />
                                     </TouchableOpacity>
                                 </View>
-                                <View style={styles.imgShadow} elevation={3}>
+                                <View style={styles.imgShadow} elevation={10}>
                                     <TouchableOpacity onPress={()=>{}}>
                                         <Image source={require('../assets/icons/dollar.png')} style={styles.topIcon} />
                                     </TouchableOpacity>
@@ -69,7 +75,7 @@ export default class HomeScreen extends React.Component{
                             <Text style={styles.address}>No. 13 Frontiers Street Western</Text>
                         </View>
                     </View>
-                    <View elevation={5} style={styles.outerInput}>
+                    <View style={styles.outerInput} elevation={5}>
                         <TextInput  style={styles.searchBar}
                                     placeholder="Search for a service"
                                     placeholderTextColor="#6E81A0"
